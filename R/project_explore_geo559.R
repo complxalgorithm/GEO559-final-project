@@ -30,7 +30,8 @@ library(gt)
 
 # 
 options(tigris_use_cache = TRUE)
-census_api_key("1127cdcdf329b894af0f6fe4bad3a4a8412c7dcc")
+census_token = Sys.getenv("CENSUS_TOKEN")
+census_api_key(census_token)
 
 # sf::sf_use_s2(FALSE)
 
