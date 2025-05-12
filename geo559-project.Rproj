@@ -1,0 +1,18 @@
+Version: 1.0
+ProjectId: 17123ef3-667f-407e-ad67-5b817e844d4e
+
+RestoreWorkspace: Default
+SaveWorkspace: Default
+AlwaysSaveHistory: Default
+
+EnableCodeIndexing: Yes
+UseSpacesForTab: Yes
+NumSpacesForTab: 2
+Encoding: UTF-8
+
+RnwWeave: Sweave
+LaTeX: pdfLaTeX
+
+PythonType: conda
+PythonVersion: 3.13.2
+PythonPath: C:/Users/scsan/anaconda3/envs/geo559/python.exe
