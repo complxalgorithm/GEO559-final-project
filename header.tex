@@ -1,0 +1,31 @@
+\usepackage{setspace}
+\usepackage{etoolbox}
+\usepackage{framed}
+\usepackage{float}
+\usepackage{booktabs, caption, longtable, colortbl, array}
+\usepackage{etoolbox}
+
+% disable floating table
+\floatplacement{table}{H}
+
+% start with default double spacing
+\AtBeginDocument{\doublespacing}
+
+% paragraph formatting
+\setlength{\parindent}{3em}
+\setlength{\parskip}{0em}
+
+% force first paragraphs to indent as well
+\makeatletter
+\patchcmd{\@startsection}
+  {\@afterindentfalse}
+  {\@afterindenttrue}
+  {}{}
+\makeatother
+
+% force code chunks to be single-spaced with smaller text than other text
+\usepackage{etoolbox}
+\BeforeBeginEnvironment{Shaded}{\begingroup\singlespacing\footnotesize}
+\AfterEndEnvironment{Shaded}{\endgroup}
+\BeforeBeginEnvironment{verbatim}{\begingroup\singlespacing\footnotesize}
+\AfterEndEnvironment{verbatim}{\endgroup}

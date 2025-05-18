@@ -14,6 +14,21 @@ format:
     code-tools: true
     embed-resources: true
     self-contained-math: true
+    page-layout: full
+ # pdf:
+ #    pdf-engine: xelatex
+ #    documentclass: article
+ #    geometry: top=0.75in, bottom=0.75in, left=0.5in, right=0.5in
+ #    fontsize: 12pt
+ #    mainfont: Georgia
+ #    include-in-header: header.tex
+ #    papersize: letter
+ #    colorlinks: true
+ #    toc: false
+ #    number-sections: false
+ #    number-depth: 2
+ #    highlight-style: github
+ #    keep-tex: true
 execute:
   message: false
   warning: false
@@ -21,15 +36,15 @@ execute:
 
 # Introduction and Literature Review
 
-Buffalo, New York, emblematic of many Rust Belt cities, has faced significant economic decline, population loss, and elevated crime rates over recent decades (Klinenberg, 2002; Scorsone & Bateson, 2011; Kraus, 2004). Once a major industrial hub, Buffalo’s population has declined dramatically from its peak in the mid-20th century, a trend strongly tied to deindustrialization and regional economic restructuring (Hollander & Cahill, 2011; Ryan, 2015). Today, nearly 30% of Buffalo’s residents live below the poverty line (U.S. Census Bureau, 2020), and these concentrated socioeconomic disadvantages have been shown to be key contributors to elevated violent crime rates (Sampson et al., 1997; Krivo & Peterson, 1996).
+Buffalo, New York, like many Rust Belt cities, has faced significant economic decline, population loss, and elevated crime rates over recent decades (Klinenberg, 2002; Scorsone & Bateson, 2011; Kraus, 2004). Once a major industrial hub, Buffalo’s population has declined dramatically from its peak in the mid-20th century, a trend strongly tied to deindustrialization and regional economic restructuring (Hollander & Cahill, 2011; Ryan, 2015). Today, nearly 30% of Buffalo’s residents live below the poverty line (U.S. Census Bureau, 2020), and these concentrated socioeconomic disadvantages have been shown to be key contributors to elevated violent crime rates (Sampson et al., 1997; Krivo & Peterson, 1996).
 
-In response to persistent crime, the Buffalo Police Department has implemented various crime prevention strategies, including the deployment of approximately 275 fixed surveillance cameras throughout the city (Open Data Buffalo, 2025). While public surveillance is increasingly used in urban policing strategies, research suggests mixed outcomes regarding their effectiveness: some studies indicate modest reductions in violent and property crimes, while others emphasize contextual limitations (Welsh & Farrington, 2009; Piza, 2018; Lum et al., 2019).
+In response to persistent crime, the Buffalo Police Department has implemented various crime prevention strategies, including the deployment of approximately 275 fixed surveillance cameras throughout the city (Open Data Buffalo, 2025). While public surveillance is increasingly used in urban policing strategies, research suggests mixed outcomes regarding their effectiveness. Some studies indicate modest reductions in violent and property crimes, while others emphasize contextual limitations (Welsh & Farrington, 2009; Piza, 2018; Lum et al., 2019).
 
-This study endeavors to identify significant predictors of violent crime in Buffalo, with particular focus on the presence of police surveillance cameras alongside a set of socioeconomic and demographic variables. A Generalized Linear Mixed Model (GLMM) was employed, allowing for both fixed effects (e.g., per capita income, poverty rate, racial composition) and random effects (e.g., spatial heterogeneity across census block groups), while a spatially lagged covariate was incorporated to account for neighborhood spillover effects (Anselin et al., 2000; Reich et al., 2006). An initial approach aggregating data over a 14-year period (2010–2023) revealed that every block group experienced at least one violent crime, thus necessitating a more nuanced model capable of isolating conditions under which violent crime is more likely to occur. By integrating spatial dynamics, police surveillance infrastructure, and neighborhood-level socioeconomic predictors, this research seeks to offer a more comprehensive view of crime risks in Buffalo and contribute to the growing body of evidence on urban crime prevention strategies.
+This study endeavors to identify significant predictors of violent crime in Buffalo, with particular focus on the presence of police surveillance cameras alongside a set of socioeconomic and demographic variables. A Generalized Linear Mixed Model (GLMM) was employed, allowing for both fixed effects (e.g., per capita income, poverty rate, educational attainment, racial composition) and random effects (e.g., spatial heterogeneity across census block groups), while a spatially lagged covariate was incorporated to account for neighborhood spillover effects (Anselin et al., 2000; Reich et al., 2006). An initial approach aggregating data over a 14-year period (2010–2023) revealed that every block group experienced at least one violent crime, thus necessitating a more nuanced model capable of isolating conditions under which violent crime is more likely to occur. By integrating spatial dynamics, police surveillance infrastructure, and neighborhood-level socioeconomic predictors, this study seeks to offer a more comprehensive view of crime risks in Buffalo, evaluate the locations of current surveillance cameras relative to block groups with high unexplained risk, and contribute to the growing body of evidence on urban crime prevention strategies.
 
-Understanding the multifaceted nature of violent crime necessitates an examination of both socioeconomic determinants and technological interventions and their relationship to violent crime. Research consistently indicates that socioeconomic factors such as poverty, unemployment, educational attainment, income inequality, overall economic disadvantage, and racial segregation are significant predictors of crime rates (Sampson and Groves, 1989; Krivo and Peterson, 1996). For instance, Wirdze (2024) found that higher levels of income inequality often lead to increased crime rates, particularly violent crimes like homicides and robberies. Similarly, the concept of "concentrated disadvantage," which encompasses factors like high poverty rates, unemployment, and single-parent households, has been linked to elevated crime levels in urban neighborhoods (Benson & Fox, 2004). This concept can potentially help explain the "law of crime concentration," which highlights that a small percentage of urban spaces account for a disproportionate amount of crime, emphasizing the need for place-based crime prevention strategies. These strategies typically involve installing surveillance cameras in an attempt to discourage crime. Systematic reviews and meta-analyses have found that CCTV surveillance is associated with a significant and modest decrease in crime, with the most consistent effects observed in parking lots (Office of Justice Programs, 2019; Welsh & Farrington, 2009). However, the effectiveness of surveillance cameras can vary based on context and implementation. For example, a study by the Urban Institute (2019) indicated that while cameras can reduce crime, particularly property crimes and vehicle crimes in parking lots, the findings are mixed and context-dependent.
+Understanding the multifaceted nature of violent crime necessitates an examination of both socioeconomic determinants and technological interventions and their relationship to violent crime. Research consistently indicates that socioeconomic factors such as poverty, unemployment, educational attainment, income inequality, overall economic disadvantage, and racial segregation are significant predictors of crime rates (Sampson and Groves, 1989; Krivo and Peterson, 1996). For instance, Wirdze (2024) found that higher levels of income inequality often lead to increased crime rates, particularly violent crimes like homicides and robberies. Similarly, the concept of "concentrated disadvantage," which encompasses factors like high poverty rates, unemployment, and single-parent households, has been linked to elevated crime levels in urban neighborhoods (Benson & Fox, 2004). This concept can potentially help explain the "law of crime concentration," which accentuates a phenomenon where a small percentage of urban spaces account for a disproportionate amount of crime, emphasizing the need for place-based crime prevention strategies (Weisburd, 2015). These strategies typically involve installing surveillance cameras in an attempt to discourage crime. Systematic reviews and meta-analyses have found that CCTV surveillance is associated with a significant and modest decrease in crime, with the most consistent effects observed in parking lots (Office of Justice Programs, 2019; Welsh & Farrington, 2009). However, the effectiveness of surveillance cameras can vary based on context and implementation. For example, a study by the Urban Institute (2019) indicated that while cameras can reduce crime, particularly property crimes and vehicle crimes in parking lots, the findings are mixed and context-dependent.
 
-Spatial analysis has become an essential tool in crime modeling and general criminological research, allowing researchers to account for the geographic distribution of crime. Anselin et al. (2000) emphasized the importance of spatial econometric models in understanding crime dynamics, advocating for the inclusion of spatial lag variables to capture the influence of neighboring areas. Incorporating spatially lagged covariates into crime models helps address spatial autocorrelation, ensuring more accurate and reliable results (Park & Kim, 2014; Marotta, 2016). This approach acknowledges that crime in one area can be influenced by crime in neighboring areas, reflecting the interconnected nature of urban environments. The use of Generalized Linear Mixed Models (GLMMs) enables the integration of both fixed effects (e.g., socioeconomic variables) and random effects (e.g., unobserved heterogeneity across locations), providing a robust framework for analyzing complex crime and socioeconomic data (Bates et al., 2015; Wu & Li, 2024; Sariaslan et al., 2013). By combining socioeconomic data, surveillance measures, and spatial analysis, researchers can develop comprehensive models to better understand and predict crime patterns, ultimately informing more effective crime prevention strategies which include evaluating areas in which surveillance installation patterns need to be revisited.
+Spatial analysis has become an essential tool in crime modeling and general criminological research, allowing researchers to account for the geographic distribution of crime. Anselin et al. (2000) emphasized the importance of spatial econometric models in understanding crime dynamics, advocating for the inclusion of spatial lag variables to capture the influence of neighboring areas. Incorporating spatially lagged covariates into crime models helps address spatial autocorrelation, ensuring more accurate and reliable results (Park & Kim, 2014; Marotta, 2016). This approach acknowledges that crime in one area can be influenced by crime in neighboring areas, reflecting the interconnected nature of urban environments. The use of Generalized Linear Mixed Models (GLMMs) enables the integration of both fixed effects (e.g., socioeconomic variables) and random effects (e.g., unobserved heterogeneity across locations), providing a robust framework for analyzing complex crime and socioeconomic data (Bates et al., 2015; Wu & Li, 2024; Sariaslan et al., 2013). By combining socioeconomic data, surveillance measures, and spatial analysis, researchers can develop comprehensive models to better understand and predict crime patterns, ultimately informing more effective crime prevention strategies which include evaluating areas in which surveillance installation patterns need to be revisited. These methods will be applied in this study to attempt to determine significant predictors of violent crime and identify areas with violent crime risk that is not explained by those predictors, allowing for future discussions and research that can lead to pointed intervention strategies in these communities.
 
 # Data and Study Area
 
@@ -39,65 +54,9 @@ The analysis looked at various demographic and socioeconomic variables along wit
 
 There were 62,967 violent crimes that occurred in Buffalo between 2010 and 2023, which averages out to around 4,497 violent crimes per year over the 14-year span. By 2025, Buffalo Police Department had installed 275 surveillance cameras across the city. Of the cameras, 78 did not have an attached installation date. There were also 109 parks administered by the city, county, or state within city limit, all of which are at least 0.25 acres in size.
 
-Census data was pulled for years between 2010 and 2023. Block group-level data for 2013-2023 was gathered using the [tidycensus](https://walker-data.com/tidycensus/) package. Since the Census Bureau blocks access to block group data before 2013, data for 2010-2012 was pulled directly from the [IPUMS](https://data2.nhgis.org/main) data selection tool by the [NHGIS](https://www.nhgis.org/). The data was then downloaded and loaded using the [ipumsr](https://cran.r-project.org/web/packages/ipumsr/index.html) package. All of it originally came from American Community Survey (ACS) 5-year estimates calculated by the U.S. Census Bureau.
+Census data was pulled for years between 2010 and 2023. Block group-level data for 2013-2023 was gathered using the [tidycensus](https://walker-data.com/tidycensus/) package. Since the Census Bureau blocks access to block group data before 2013, data for 2010-2012 was pulled directly from the [IPUMS](https://data2.nhgis.org/main) data selection tool by the [NHGIS](https://www.nhgis.org/). The data was then downloaded and loaded using the [ipumsr](https://cran.r-project.org/web/packages/ipumsr/index.html) package. All of it originally came from American Community Survey (ACS) 5-year estimates calculated by the U.S. Census Bureau. Exact data sources can be found in the references.
 
-Exact data sources can be found in the references.
-
-## Study Area
-
-The study focuses on the 290 census block groups in Buffalo, New York as they have been delineated since 2020. However, the model was trained on a random sample consisting of ~80% (231) of the block groups.
-
-```{r study_area, message=F, warning=F, cache=T}
-# get buffalo boundary and buffalo block group boundaries
-buffalo <- 
-  tigris::places(state = 'NY', cb = TRUE, year = 2020) %>%
-  filter(NAME == 'Buffalo')
-
-study_bgs <- 
-  tigris::block_groups(state = 'NY', county = 'Erie', 
-                       cb = TRUE, year = 2020) %>%
-  .[data.frame(st_intersects(st_centroid(.), buffalo))$row.id,]
-
-# plot Buffalo block groups as of 2020
-buff_map <-
-  ggplot() +
-    geom_sf(data = study_bgs, 
-            color = 'black', fill = NA, size = 2) +
-    labs(title = 'Buffalo, New York Block Groups Since 2020') +
-    theme_map()
-
-buff_map
-```
-
-# Methods
-
-## Processing Methods
-
-The [tidyverse](https://www.tidyverse.org/) collection of packages was the primary tool used to process and manipulate a large amount of data. The [tigris](https://github.com/walkerke/tigris) package (specifically the *places* and *block_groups* functions) was used to pull Buffalo block groups to create a map of the study area and to pull block-level population and geometry data for use as the interpolation weights. The [sf](https://r-spatial.github.io/sf/) package was necessary to work with spatial features, including the block group-level ACS data. The plots and maps were created using [ggplot2](https://ggplot2.tidyverse.org/), and data tables were created using the [gt](https://gt.rstudio.com/) package. The interpolate_pw function of the tidycensus package was employed to create uniform block group boundaries over the 14-year period through population-weighted areal interpolation via centroid assignment (Walker, 2023).
-
-The [terra](https://rspatial.github.io/terra/) package was used to convert the park proximity buffers to rasters and process them, and the [distanceto](https://robitalec.github.io/distance-to/) package allowed for the creation of a Euclidean distance (to park) raster over the city for each year. The resulting rasters were then the basis for the calculation of an average distance to park variable with the exact_extract() function from the [exactextractr](https://isciences.gitlab.io/exactextractr/) package. Park proximity was ultimately incorporated in the model by calculating the percentage of each block group that was covered by the walking distance (0.25 miles) proximity buffer for the relevant year as opposed to using the distance raster.
-
-## Generalized Linear Mixed Model using lme4
-
-A generalized linear mixed model was fitted using the [lme4](https://github.com/lme4/lme4/) package to assess violent crime risk across the 290 uniform block groups. The model attempted to predict the presence of violent crime in a block group using the block group's per capita income, poverty rate, educational attainment, local and neighboring percentages of the population who identified as black (to attempt to account for spatial dependence), park proximity, and time period as predictors. The spatially lagged covariate of black population was needed given the socioeconomic nature of this study, since socioeconomic phenomena tend to be clustered. Also, incorporating the GEOID of each block group as a random effect in a Generalized Linear Mixed Model (GLMM) effectively accounts for unobserved, time-invariant characteristics unique to each spatial unit, especially when observations are repeated over multiple years (Bolker et al., 2009). This approach controls for baseline differences across block groups, allowing fixed effects to capture temporal and socioeconomic predictors of violent crime. Such modeling techniques are well-supported in statistical literature, emphasizing their utility in handling repeated measures and nested data structures.
-
-A GLMM regression model was originally fitted on a condensed dataset, where each row represented one block group and their average values over the course of the study time period. Every block group had at least one violent crime occur within the 14-year time period, so there was no second group (block groups without crime) to compare to. Another previous model attempt treated the year as a factor to observe more temporally granular violent crime risk changes, but the model faced issues with overparameterization and large standard errors in the coefficients. Creating a categorical predictor that groups the block groups into time periods was an appropriate work-around to solve issues with fitting while maintaining the ability to evaluate the change in risk since the earliest years of the study.
-
-The glmer() function from the lme4 package was specifically used as it is widely utilized for fitting Generalized Linear Mixed Models (GLMMs), particularly in studies examining the influence of socioeconomic and demographic factors on various outcomes. For instance, in their comprehensive guide, Bates et al. (2015) detail the application of glmer() for modeling data with both fixed and random effects, emphasizing its flexibility in handling complex hierarchical structures. The bobyqa optimizer within the glmer() function was used to enhance model convergence and computational efficiency. The bobyqa optimizer, which stands for Bound Optimization BY Quadratic Approximation, is particularly effective for optimizing complex models with random effects, as it does not require gradient information and is well-suited for problems with bound constraints.
-
-The [DHARMa](https://github.com/florianhartig/DHARMa) package was used for diagnostic tests to evaluate model assumptions after the model was fitted. The [spdep](https://r-spatial.github.io/spdep/) package was then used to check for spatial autocorrelation by running a Moran's I test.
-
-## Data Processing
-
-### Set Up and Load Data
-
-The boundary and neighborhood boundaries of Buffalo, as well as the violent crimes, police surveillance cameras, and city-based parks were loaded from their respective governmental sources and then processed.
-
-Additionally, ACS data was loaded using tidycensus and ipumsr and then processed. Population-weighted areal interpolation techniques were applied to the 2010-2019 data to match the 2020-2023 boundaries. The final variables were calculated/determined, and the dataset was finalized.
-
-#### Features Used in Analysis
-    
-```{r setup, message=F, warning=F, cache=T}
+```{r libraries_setup, message=F, warning=F}
 # import necessary libraries
 library(tidyverse)
 library(tidycensus)
@@ -123,22 +82,81 @@ library(gt)
 
 source('R/functions.R')
 
-knitr::opts_chunk$set(echo = TRUE # cache the results for quick compiling
-                      #fig.width = unit(18, 'cm'),
-                      #fig.height = unit(11, 'cm'))
+knitr::opts_chunk$set(echo = TRUE, # cache the results for quick compiling
+                      fig.align = 'center',
+                      fig.width = 7.5,
+                      fig.asp = 0.618,
+                      fig.pos = 'H')
 
 # set options and get census api key
 options(tigris_use_cache = TRUE)
 terraOptions(progress = 0)
 census_token = Sys.getenv("CENSUS_TOKEN")
 census_api_key(census_token)
+```
 
+## Study Area
 
-#######################################################################
+The study focuses on the 290 census block groups in Buffalo, New York as they have been delineated since 2020. However, the model was trained on a random sample consisting of ~80% (231) of the block groups.
 
+```{r study_area, message=F, warning=F, cache=T}
+# get buffalo boundary and buffalo block group boundaries
+buffalo <- 
+  tigris::places(state = 'NY', cb = TRUE, year = 2020) %>%
+  filter(NAME == 'Buffalo')
+
+study_bgs <- 
+  tigris::block_groups(state = 'NY', county = 'Erie', 
+                       cb = TRUE, year = 2020) %>%
+  .[data.frame(st_intersects(st_centroid(.), buffalo))$row.id,]
+
+# plot Buffalo block groups as of 2020
+buff_map <-
+  ggplot() +
+    geom_sf(data = study_bgs, 
+            color = 'black', fill = NA, size = 2) +
+    labs(title = 'Buffalo, New York Block Groups',
+         subtitle = 'Since 2020') +
+    theme_map()
+
+buff_map
+```
+
+# Methods
+
+## Processing Methods
+
+The [tidyverse](https://www.tidyverse.org/) collection of packages was the primary tool used to load, combine, and process the data used in this study. The [tigris](https://github.com/walkerke/tigris) package (specifically the *places* and *block_groups* functions) was used to pull Buffalo block groups to create a map of the study area and to pull block-level population and geometry data for use as the interpolation weights. The [sf](https://r-spatial.github.io/sf/) package was necessary to work with spatial features, including the block group-level ACS data. Maps and plots were created using [ggplot2](https://ggplot2.tidyverse.org/), and data tables were created using the [gt](https://gt.rstudio.com/) package. The *interpolate_pw* function of the tidycensus package was employed to create uniform block group boundaries over the 14-year period through population-weighted areal interpolation via centroid assignment (Walker, 2023).
+
+The [terra](https://rspatial.github.io/terra/) package was used to convert the park proximity buffers to rasters and process them. The resulting rasters were then the basis for the calculation of a percentage walking distance park proximity variable with the *exact_extract* function from the [exactextractr](https://isciences.gitlab.io/exactextractr/) package. Walking distance was defined as being at most 0.25 miles away from at least one of the 109 parks in the city.
+
+## Generalized Linear Mixed Model using lme4
+
+A generalized linear mixed model was fitted using the [lme4](https://github.com/lme4/lme4/) package to assess violent crime risk across the 290 uniform block groups. The model attempted to predict the presence of violent crime in a block group using the block group's per capita income, poverty rate, educational attainment, local and neighboring percentages of the population who identified as black (to attempt to account for spatial dependence), park proximity, and time period as predictors. The spatially lagged covariate of black population was needed given the socioeconomic nature of this study, since socioeconomic phenomena tend to be clustered. Also, incorporating the GEOID of each block group as a random effect in a Generalized Linear Mixed Model (GLMM) effectively accounts for unobserved, time-invariant characteristics unique to each spatial unit, especially when observations are repeated over multiple years (Bolker et al., 2009). This approach controls for baseline differences across block groups, allowing fixed effects to capture temporal and socioeconomic predictors of violent crime. Such modeling techniques are well-supported in statistical literature, illuminating their utility in handling repeated measures and nested data structures.
+
+A GLMM regression model was originally fitted on a condensed dataset, where each row represented one block group and their average values over the course of the study time period. Every block group had at least one violent crime occur within the 14-year time period, so there was no second group (block groups without crime) to compare to. Another previous model attempt treated the year as a factor to observe more temporally granular violent crime risk changes, but the model faced issues with overparameterization and large standard errors in the coefficients. Creating a categorical predictor that groups the block groups into time periods was an appropriate work-around to solve issues with fitting while maintaining the ability to evaluate the change in risk since the earliest years of the study.
+
+The *glmer* function from the lme4 package was specifically used as it is widely utilized for fitting Generalized Linear Mixed Models (GLMMs), particularly in studies examining the influence of socioeconomic and demographic factors on various outcomes. For instance, in their comprehensive guide, Bates et al. (2015) detail the application of *glmer* for modeling data with both fixed and random effects, emphasizing its flexibility in handling complex hierarchical structures. The bobyqa optimizer within the *glmer* function was used to enhance model convergence and computational efficiency. The bobyqa optimizer, which stands for Bound Optimization By Quadratic Approximation, is particularly effective for optimizing complex models with random effects, as it does not require gradient information and is well-suited for problems with bound constraints.
+
+The [DHARMa](https://github.com/florianhartig/DHARMa) package was used for diagnostic tests to evaluate model assumptions after the model was fitted and before interpreting the model results. The [spdep](https://r-spatial.github.io/spdep/) package was then used to check for spatial autocorrelation by running a Moran's I test.
+
+## Data Processing
+
+### Set Up and Load Data
+
+The boundary and neighborhood boundaries of Buffalo, as well as the violent crimes, police surveillance cameras, and city-based parks were loaded from their respective governmental sources and then processed.
+
+Additionally, ACS data was loaded using tidycensus and ipumsr and then processed. Population-weighted areal interpolation techniques were applied to the 2010-2019 data to match the 2020-2023 boundaries. The final variables were calculated/determined, and the dataset was finalized.
+
+#### Features Used in Analysis
+    
+```{r features, message=F, warning=F, cache=T}
 # get buffalo city boundaries
+buff_border_url <- paste('https://data.buffalony.gov/api/views/p4ak-r4fg/rows.csv',
+                         '?date=20250308&accessType=DOWNLOAD', sep = '')
+
 buff_border <-
-  read_csv('https://data.buffalony.gov/api/views/p4ak-r4fg/rows.csv?date=20250308&accessType=DOWNLOAD') %>%
+  read_csv(buff_border_url) %>%
   st_as_sf(wkt = 'Geometry', crs = 'EPSG:4269')
 
 # get buffalo neighborhoods
@@ -171,7 +189,8 @@ crimes <-
   ) %>%
   mutate_at('Year', as.numeric) %>%
   filter(Year >= 2006 & Year < 2024) %>%
-  .[!((.$Latitude == 'UNKNOWN' | .$Longitude == 'UNKNOWN') | (.$Latitude == '' | .$Longitude == '')), ] %>%
+  .[!((.$Latitude == 'UNKNOWN' | .$Longitude == 'UNKNOWN') | 
+        (.$Latitude == '' | .$Longitude == '')), ] %>%
   st_as_sf(coords = c('Longitude', 'Latitude'), crs = 'EPSG:4269')
 
 buff_crimes <- crimes[data.frame(st_intersects(crimes, buff_border))$row.id,]
@@ -186,15 +205,13 @@ violent_crimes.buff <- buff_crimes %>%
 ## 166,334 PROPERTY CRIMES
 property_crimes.buff <- buff_crimes %>%
   filter(`Incident Type Primary` %in%
-           c('UUV', 'THEFT OF SERVICES', 'LARCENY/THEFT', 'Theft', 'Theft of Vehicle', 'Breaking & Entering'))
+           c('UUV', 'THEFT OF SERVICES', 'LARCENY/THEFT', 
+             'Theft', 'Theft of Vehicle', 'Breaking & Entering'))
 
 # show bar graph of number of violent crimes per year between 2006 & 2023
 ggplot(violent_crimes.buff, aes(Year)) + 
-  geom_bar()
-
-# show bar graph of number of property crimes per year between 2006 & 2023
-ggplot(property_crimes.buff, aes(Year)) + 
-  geom_bar()
+  geom_bar() +
+  labs(title = 'Violent Crimes in Buffalo (2006-2023)')
 
 # create line graph of homicides between 2006 and 2023 in Buffalo
 homicide_types = c('MURDER', 'CRIM NEGLIGENT HOMICIDE', 'MANSLAUGHTER')
@@ -217,14 +234,21 @@ violent_crimes.buff %>%
                        breaks = c(2006:2023),
                        labels = c(2006:2023)) +
     theme(plot.title = element_text(hjust = 0.5),
+          axis.text.x = element_text(angle = 90, 
+                                     vjust = 0.5, 
+                                     hjust = 1),
           panel.grid.major.y = element_blank())
 
 # import bpd cameras data
 ### 275 TOTAL CAMERAS
 ##### 83 CAMERAS WITH VALID INSTALLED DATE
+bpd_cameras_url <- paste(
+  'https://data.buffalony.gov/api/views/gpj7-v6rr/rows.csv',
+  '?date=20250304&accessType=DOWNLOAD', sep = ''
+)
+
 bpd_cameras <- 
-  read.csv('https://data.buffalony.gov/api/views/gpj7-v6rr/rows.csv?date=20250304&accessType=DOWNLOAD',
-           check.names = FALSE) %>%
+  read.csv(bpd_cameras_url, check.names = FALSE) %>%
   mutate(year = as.numeric(str_split(.$`Installed Date`, '/', simplify = TRUE)[, 3])) %>%
   st_as_sf(coords = c('X', 'Y'), crs = 'EPSG:4269')
 
@@ -236,7 +260,7 @@ bpd_cameras %>%
   mutate(ifValid = ifelse(is.na(year), 0, 1)) %>% 
   ggplot() + 
     geom_sf(data = buff_border, color = 'black', fill = 'transparent') + 
-    geom_sf(aes(color = as.factor(ifValid))) +
+    geom_sf(aes(color = as.factor(ifValid)), size = 1) +
     scale_color_manual(
       name = 'Camera Validity', 
       labels = c('Invalid', 'Valid'), 
@@ -255,12 +279,18 @@ invalid_cameras <- bpd_cameras %>% filter(is.na(year))
 ### 218 AREAS
 ##### 
 ####### 
+buff_parks_url <- paste(
+  'https://data.buffalony.gov/api/views/tmik-tgt9/rows.csv',
+  '?date=20250304&accessType=DOWNLOAD', sep = ''
+)
+
 buff_parks <- 
-  read.csv('https://data.buffalony.gov/api/views/tmik-tgt9/rows.csv?date=20250304&accessType=DOWNLOAD',
-                       check.names = FALSE) %>%
+  read.csv(buff_parks_url, check.names = FALSE) %>%
   st_as_sf(wkt = 'Geometry', crs = 'EPSG:4269') %>%
   filter(
-    (`Park Class` %in% c('Major Park', 'Large Park', 'Midsize Park', 'Small Park', 'Parkway')) | (`Park Class` == 'Triangle' & Designated == 1)
+    (`Park Class` %in% c('Major Park', 'Large Park', 'Midsize Park', 
+                         'Small Park', 'Parkway')) | 
+      (`Park Class` == 'Triangle' & Designated == 1)
   ) %>%
   mutate('Park Category' = 'City Park',
          Area_Sqmi = units::set_units(st_area(.), 'mi2'),
@@ -274,7 +304,7 @@ buff_parks <-
 
 # import nys parks, then find Buffalo-based state park and fill in relevant information
 nys_parks <- 
-  st_read('data/NYS_Park_Polygons.gpkg') %>% 
+  st_read('data/NYS_Park_Polygons.gpkg', quiet = TRUE) %>% 
   st_transform(st_crs(buff_border))
 
 nys_parks_in_buff.idx <- 
@@ -309,14 +339,15 @@ erie_park_addresses <- c('Aqua Ln', '3781 Main St', '20 Smith St', '1670 Seneca 
 erie_park_years <- c(2013, 1902, 2012, 1994, 1987, 1925, 1996)
 erie_park_park_classes <- c('Small Park', 'Large Park', 'Small Park', 'Midsize Park',
                             'Large Park', 'Small Park', 'Small Park')
-erie_park_neighborhoods <- c('Black Rock', 'University Heights', 'First Ward', 'Seneca-Cazenovia', 
-                             'Central', 'Black Rock', 'Seneca-Cazenovia')
+erie_park_neighborhoods <- c('Black Rock', 'University Heights', 'First Ward', 
+                             'Seneca-Cazenovia', 'Central', 
+                             'Black Rock', 'Seneca-Cazenovia')
 erie_park_districts <- c('North', 'University', 'Fillmore', 'Lovejoy', 
                          'South', 'North', 'Lovejoy')
 
 # read in Buffalo-based county parks and add above info
 erie_parks_in_buff <- 
-  st_read('data/erie_county_parks_in_buffalo.gpkg') %>%
+  st_read('data/erie_county_parks_in_buffalo.gpkg', quiet = TRUE) %>%
   st_make_valid() %>%
   select(NAME) %>%
   mutate(
@@ -340,7 +371,9 @@ erie_parks_in_buff <-
 all_buff_parks <- 
   bind_rows(buff_parks, nys_parks_in_buff, erie_parks_in_buff) %>%
   filter(
-    Area_Acres >= units::set_units(0.25, 'acre') & (!((grepl('Monument', Name) | (grepl('Memorial', Name)))))
+    Area_Acres >= 
+      units::set_units(0.25, 'acre') & 
+      (!((grepl('Monument', Name) | (grepl('Memorial', Name)))))
   )
 
 # add years to certain parks that don't currently have them
@@ -560,7 +593,8 @@ erie_blocks.nhgis <-
     some_college_no_deg = some_college_lt_1yr + some_college_gt_1yr_no_deg,
     bachelors_deg_at_least = bachelors_deg + masters_deg + professional_deg + doctoral_deg,
     less_than_bachelors_deg = tot_pop_over_25 - bachelors_deg_at_least,
-    less_than_high_school_grad = tot_pop_over_25 - (high_school_dip_equiv + some_college_no_deg + bachelors_deg_at_least)
+    less_than_high_school_grad = tot_pop_over_25 - (high_school_dip_equiv + some_college_no_deg + 
+                                                      bachelors_deg_at_least)
   ) %>%
   relocate(geometry, .after = last_col())
 
@@ -590,21 +624,24 @@ buff_blocks.nhgis <-
 
 block_buff_intersects.pre_covid <- 
   data.frame(
-    st_intersects(
-      st_centroid(erie_blocks.pre_covid), 
-      buff_border
-    )
+    st_intersects(st_centroid(erie_blocks.pre_covid), buff_border)
   )$row.id
 
-missing_blocks.pre_covid <- which(erie_blocks.pre_covid$GEOID %in% c(360290011003, 360290072021, 360290058022))
+missing_blocks.pre_covid <- which(erie_blocks.pre_covid$GEOID %in% c(360290011003, 
+                                                                     360290072021, 
+                                                                     360290058022))
 
 buff_blocks.pre_covid <- 
   erie_blocks.pre_covid[c(block_buff_intersects.pre_covid, missing_blocks.pre_covid),] %>%
   st_make_valid()
 
-block_buff_intersects.post_covid <- data.frame(st_intersects(st_centroid(erie_blocks.post_covid), buff_border))$row.id
+block_buff_intersects.post_covid <- data.frame(
+  st_intersects(st_centroid(erie_blocks.post_covid), buff_border)
+)$row.id
 
-missing_blocks.post_covid <- which(erie_blocks.post_covid$GEOID %in% c(360290011003, 360290072021, 360290058022))
+missing_blocks.post_covid <- which(erie_blocks.post_covid$GEOID %in% c(360290011003, 
+                                                                       360290072021, 
+                                                                       360290058022))
 
 buff_blocks.post_covid <- 
   erie_blocks.post_covid[c(block_buff_intersects.post_covid, missing_blocks.post_covid),] %>%
@@ -617,7 +654,7 @@ buff_blocks.pre_covid <-
   filter(!is.na(year))
 ```
 
-### Population-weighted areal interpolation
+### Population-Weighted Areal Interpolation
 
 ```{r interpolation, message=F, warning=F, cache=T}
 # list of all variables pulled
@@ -676,7 +713,7 @@ for (i in pre_covid_yrs) {
       pop_25plus_density = tot_pop_over_25 / area_sqmi
     )
   
-  #
+  # add interpolated data for the year to pre_covid_data list
   pre_covid_data[[as.character(i)]] <- interpolated
 }
 
@@ -703,9 +740,11 @@ buff_blocks <-
 ### Final Processing and Data Calculation
 
 ```{r final_calculations, message=F, warning=F, cache=T}
-# initialize separate lists to hold avg_park_distance rasters and buffer rasters
-avg_park_distance_rasters <- c()
+# initialize list to hold buffer rasters
 buffer_rasters <- c()
+
+# set projected coordinate system
+proj_crs <- 'EPSG:26917'
 
 # determine number of cameras in block group in year,
 # as well as number of violent crimes and violent crime rate
@@ -799,24 +838,7 @@ buff_blocks <-
     # calculate percent walking distance park proximity coverage
     pct_park_coverage <- exactextractr::exact_extract(buffer_raster, 
                                                       yr_buff_blocks, 
-                                                      'mean', progress = 0)
-    
-    # create euclidean distance raster of park proximity buffer
-    dist_raster <- distanceto::distance_raster(
-      y = parks_yr %>% st_collection_extract('POLYGON'),
-      cellsize = 30, 
-      extent = ext, 
-      check = FALSE,
-      progress = 0
-    )
-    
-    # calculate average distance to park in each block group,
-    # then add raster to avg_park_distance_rasters vector
-    avg_park_distances <- exactextractr::exact_extract(dist_raster, 
-                                                       yr_buff_blocks, 
-                                                       'mean', progress = 0)
-    
-    avg_park_distance_rasters[[as.character(yr)]] <- avg_park_distances
+                                                      'mean', progress = FALSE)
     
     # final joining back to year data and creating remaining variables
     # then return the data for the year
@@ -830,7 +852,6 @@ buff_blocks <-
           Num_Cameras = replace_na(Num_Cameras, 0),
           num_violent_crimes = replace_na(num_violent_crimes, 0),
           pct_park_proximity = pct_park_coverage,
-          avg_distance_to_park = avg_park_distances,
           violent_crime_rate = (num_violent_crimes / tot_pop) * 1000,
           has_crime = ifelse(num_violent_crimes > 0, 1, 0),
           has_camera = ifelse(Num_Cameras > 0, 1, 0),
@@ -842,19 +863,16 @@ buff_blocks <-
   }) %>%
   bind_rows() %>%
   select(-ends_with('_y')) %>%
-  st_transform(crs = 'EPSG:26917') # transform to UTM Zone 17
+  st_transform(crs = proj_crs) # transform to UTM Zone 17
 ```
 
 # Results
 
 ## GLMM Model Using glmer
 
-A generalized linear mized model (GLMM) was fitted using the glmer() function in the lme4 package. There are 4,060 observations that represent one of the 290 block groups for a given year between 2010-2023. For training purposes, 3,234 observations were fed into the model representing 231 block groups for a given year in the study period.
+A generalized linear mized model (GLMM) was fitted using the *glmer* function in the lme4 package to estimate the probability of violent crime occurring in a block group of Buffalo, New York using several socio-environmental predictors, while accounting for unobserved heterogeneity across space via random intercepts at the block group (GEOID) level. There are 4,060 observations that represent one of the 290 block groups for a given year between 2010-2023. For training purposes, 3,234 observations were fed into the model representing 231 block groups for each year in the study period.
 
-```{r regression, message=F, warning=F}
-# specify seed for consistent number generation
-set.seed(1234)
-
+```{r regression, message=F, warning=F, eval=F}
 # scale quantitative independent variables, then place each observation in a year group
 buff_blocks.scaled <- 
   buff_blocks %>%
@@ -869,8 +887,7 @@ buff_blocks.scaled <-
     pct_below_poverty = scale(pct_below_poverty)[,1],
     pct_bachelors_deg_at_least = scale(pct_bachelors_deg_at_least)[,1],
     pct_black_pop = scale(pct_black_pop)[,1],
-    pct_park_proximity = scale(pct_park_proximity)[,1],
-    avg_distance_to_park = scale(avg_distance_to_park)[,1]
+    pct_park_proximity = scale(pct_park_proximity)[,1]
   )
 
 # get centroids of unique block groups
@@ -912,6 +929,9 @@ geoid_strata <-
   ) %>%
   mutate(stratum = paste0('crime', had_crime, '_camera', had_camera))
 
+# specify seed for consistent number generation
+set.seed(1234)
+
 # get 80% of GEOIDS that match each stratum definition
 train_geoids <- 
   geoid_strata %>%
@@ -922,10 +942,6 @@ train_geoids <-
 # split data into training and testing datasets
 train_data <- buff_blocks.scaled_lagged %>% filter(GEOID %in% train_geoids)
 test_data <- buff_blocks.scaled_lagged %>% filter(!(GEOID %in% train_geoids))
-
-# # check for desired split
-# table(geoid$stratum) # total per group
-# table(train_data$GEOID %in% train_geoids) # sanity check
 
 # logistic regression with block group as random effect, 
 # year_group as fixed effect, spatially lagged covariate of pct_black_pop, 
@@ -939,33 +955,54 @@ model_glmer <- glmer(
   control = glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e5))
 )
 
-# save model
+# save model and training and test data
 #saveRDS(model_glmer, 'model/model.rds')
+#st_write(train_data, 'model/train_data.gpkg')
+#st_write(test_data, 'model/test_data.gpkg')
+```
 
-# load fitted model
-model <- readRDS('model/model.rds')
-
-#summary(model)
+```{=latex}
+\begingroup
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
 ```
 
 In mathematical terms, the model can be expressed as such:
 
-![Violent crime risk predictive GLMM in mathematical form](imgs/glmm_equation.png){fig-alt="Violent crime risk predictive GLMM in mathematical form"}
+![](imgs/glmm_equation.png){fig-alt="Violent crime risk predictive GLMM in mathematical form"}
 
 Where:
+```{=latex}
+\begin{singlespace}
+\begin{itemize}
+  \item $has\_crime_{it}$ is a binary outcome for block group $i$ in time $t$
+  \item $\beta_0$ is the model intercept
+  \item $\beta_1, \dots, \beta_7$ are fixed-effect coefficients
+  \item $\gamma_j$ are coefficients for the year group fixed effects
+  \item $u_i \sim \mathcal{N}(0, \sigma_u^2)$ is the random intercept
+  \item $I(\cdot)$ is an indicator function for year groups
+\end{itemize}
+\end{singlespace}
+```
+It is imperative to conduct diagnostics tests to assess the model's fit, stability, and potential for interpretation.
 
-* has_crime~it~ is a binary outcome for block group ii in time tt
-* β~0~ is the model intercept
-* β~1~,…,β~7~ are fixed-effect coefficients for the continuous and binary predictors
-* γ~j~​ are coefficients for the year group fixed effects (with one omitted as reference)
-* u~i~ ∼ N(0,σ~u~^2^) is the random intercept for block group ii
-* I(⋅) is an indicator function for year groups (i.e., dummy variables)
-
-It is imperative to conduct diagnostics tests to assess the model's fit, stability, and potential for interpretation. 
+```{=latex}
+\endgroup
+```
 
 ### Diagnostic Tests
 
-```{r regression_diagnostics, message=F, warning=F}
+```{r regression_diagnostics, message=F, warning=F, cache=F}
+# load fitted model and train/test datasets
+model <- readRDS('model/model.rds')
+#summary(model)
+
+train_data <- st_read('model/train_data.gpkg', quiet = TRUE)
+test_data <- st_read('model/test_data.gpkg', quiet = TRUE)
+
+train_geoids <- unique(train_data$GEOID)
+test_geoids <- unique(test_data$GEOID)
+
 # simulate residuals to help assess model fit,
 # then show diagnostic plots
 model.simres <- simulateResiduals(model)
@@ -991,8 +1028,9 @@ vif(model)
 
 # get one row per block group
 buff_blocks.ranef <-
-  buff_blocks.scaled_lagged %>%
-  filter(year == 2023 & GEOID %in% train_geoids)
+  train_data %>%
+  filter(GEOID %in% train_geoids) %>%
+  distinct(GEOID, .keep_all = TRUE)
 
 # add random intercepts
 buff_blocks.ranef$random_intercept <- random_intercepts
@@ -1009,17 +1047,13 @@ moran_test <- moran.test(buff_blocks.ranef$random_intercept, lw_knn)
 moran_test
 ```
 
-Diagnostic tests indicate that the generalized linear mixed model (GLMM) fits the data well and that key assumptions are reasonably satisfied. The DHARMa residual diagnostics reveal no significant issues, with residuals closely approximating a uniform distribution. The Kolmogorov–Smirnov test returned a non-significant result (p = 0.057) signifying no significant misspecification, and neither the dispersion test (p = 0.912) nor the outlier test (p = 0.373) detected evidence of model misfit or overdispersion. The residuals vs predicted values plot shows a mostly uniform scatter of residuals across predicted probabilities, supporting the assumption of homoscedasticity. These findings suggest that the model’s structure adequately captures the variance in the outcome and that both fixed and random effects are appropriately specified. The Generalized Variance Inflation Factor (GVIF) values are all under 2, suggesting no evidence of problematic multicollinearity. The normal Q-Q plot of the random intercepts shows a generally acceptable distribution but reflects mild deviation in the lower and upper tails, indicating mild non-normality. This, however, is not uncommon in spatial data and not very significant given the larger sample size and the model's conformity to other assumptions.
+Diagnostic tests indicate that the generalized linear mixed model (GLMM) fits the data well and that key assumptions are reasonably satisfied. The DHARMa residual diagnostics reveal no significant issues, with residuals closely approximating a uniform distribution. The Kolmogorov–Smirnov test returned a non-significant result (p = 0.057) signifying no significant misspecification, and neither the dispersion test (p = 0.912) nor the outlier test (p = 0.373) detected evidence of model misfit or overdispersion. The residuals vs predicted values plot shows a mostly uniform scatter of residuals across predicted probabilities, supporting the assumption of homoscedasticity. These findings suggest that the model’s structure adequately captures the variance in the outcome and that both fixed and random effects are appropriately specified. The adjusted Generalized Variance Inflation Factor (GVIF) values are all under 2, suggesting no evidence of problematic multicollinearity. The normal Q-Q plot of the random intercepts shows a generally acceptable distribution but reflects mild deviation in the lower and upper tails, indicating mild non-normality. This, however, is not uncommon in spatial data and not very significant given the larger sample size and the model's conformity to other assumptions.
 
-Importantly, the spatially lagged percent Black population was included in the model to account for potential spatial dependence in neighborhood-level demographics. This addition helped to alleviate residual spatial autocorrelation, as confirmed by the updated Moran’s I test on the random intercepts. The Moran’s I statistic was tiny (I = 0.0007) and statistically non-significant (p = 0.446), indicating that no substantial spatial clustering remains in the unexplained variation across block groups. This suggests that the inclusion of a spatially structured covariate successfully addressed previously unmodeled spatial dependence and improves confidence in the validity of the model’s inferences.
+Importantly, the spatially lagged percent Black population was included in the model to account for potential spatial dependence in neighborhood-level demographics. This addition helped to alleviate residual spatial autocorrelation, as confirmed by the updated Moran’s I test on the random intercepts. The Moran’s I statistic was tiny (I = 0.0048) and statistically non-significant (p = 0.404), indicating that no substantial spatial clustering remains in the unexplained variation across block groups. This suggests that the inclusion of a spatially structured covariate successfully addressed previously unmodeled spatial dependence and improves confidence in the validity of the model’s inferences.
 
 ### Fixed Effects
 
-```{r fixed_effects, message=F, warning=F}
-###
-# odds ratio interpretation
-###
-
+```{r fixed_effects, message=F, warning=F, cache=F}
 # extract fixed effects
 # then exponentiate to get odds ratios
 fixef_vals <- fixef(model)
@@ -1069,7 +1103,8 @@ odds_table <-
   tab_options(
     table.font.size = 'small',
     heading.align = 'left'
-  )
+  ) %>%
+  as_latex()
 
 odds_table
 
@@ -1083,7 +1118,7 @@ fixed_effects_plot_data <-
 
 # plot fixed effects with confidence intervals and significance
 fixed_effects_plt <-
-  ggplot(fixed_effects_plot, 
+  ggplot(fixed_effects_plot_data, 
          aes(x = reorder(Predictor, Odds_Ratio), y = Odds_Ratio)) +
   geom_point(aes(color = Significance), size = 3) +
   geom_errorbar(aes(ymin = CI_Lower, ymax = CI_Upper, color = Significance), width = 0.2) +
@@ -1102,21 +1137,17 @@ fixed_effects_plt <-
 fixed_effects_plt
 ```
 
-The generalized linear mixed model (GLMM) presented here estimates the probability of violent crime occurring in a block group of Buffalo, New York using several socio-environmental predictors, while accounting for unobserved heterogeneity across space via random intercepts at the block group (GEOID) level. The model performs well overall, with a relatively low AIC (386.2) and a significant random intercept variance (σ = 4.097), suggesting that baseline crime risk varies meaningfully across block groups even after adjusting for covariates.
+The model performs well overall, with a relatively low AIC (386.2) and a significant random intercept variance (σ = 4.097), suggesting that baseline crime risk varies meaningfully across block groups even after adjusting for covariates.
 
-Several fixed effects stand out as statistically significant. Most notably, block groups with a surveillance camera had 25 times greater odds of reporting violent crime (OR = 20.67, p = 0.002), which likely reflects reactive placement strategies or a higher probability of detection in surveilled areas rather than a causal effect. Higher per capita income was associated with reduced odds of violent crime (OR = 0.51, p = 0.010), and higher educational attainment (measured by the percentage with at least a bachelor’s degree) was similarly protective (OR = 0.52, p = 0.035), consistent with established socioeconomic theories of crime. Interestingly, the lagged percentage of Black population was associated with substantially higher odds (OR = 5.62, p = 0.040), indicating that surrounding demographic context elevates the violent crime risk of a given block group, even after adjusting for its own characteristics. The direct effect of a block group's own percentage of Black population, in contrast, had no significant effect (p = 0.797), supporting the use of lagged variables to better capture structural or delayed effects.
+Several fixed effects stand out as statistically significant. Most notably, block groups with a surveillance camera had 20 times greater odds of reporting violent crime (OR = 20.67, p = 0.002), which likely reflects reactive placement strategies or a higher probability of detection in surveilled areas rather than a causal effect. Higher per capita income was associated with reduced odds of violent crime (OR = 0.51, p = 0.010), and higher educational attainment (measured by the percentage with at least a bachelor’s degree) was similarly protective (OR = 0.52, p = 0.035), consistent with established socioeconomic theories of crime. Interestingly, the lagged percentage of Black population was associated with substantially higher odds of violent crime (OR = 5.62, p = 0.040), indicating that surrounding demographic context elevates the violent crime risk of a given block group, even after adjusting for its own characteristics. The direct effect of a block group's own percentage of Black population, in contrast, had no significant effect (p = 0.797), supporting the use of lagged variables to better capture structural or delayed effects.
 
-Other variables, such as poverty, park proximity, and the block group's own Black population percentage, did not yield statistically significant associations in this model. These null findings, in combination with significant predictors, underscore the complexity of spatial crime dynamics and the need to interpret associations with caution, especially when using observational data. The temporal fixed effects (year groupings) show a clear decline in crime risk over the 14-year study period. Compared to the baseline period (2010-2012, the odds of violent crime were significantly lower during 2017-2019 (OR = 0.11, p = 0.0078) and even lower during 2020-2023 (OR = 0.05, p < 0.001), after controlling for all over preditors. These results suggest a substantial decrease in violent crime odds in recent years, which many reflect broader shifts such as policing strategies, demographic changes, or social conditions over time. The 2013-2016 period was not significantly different from the baseline.
+Other variables, such as poverty rate, park proximity, and the block group's own Black population percentage, did not yield statistically significant associations in this model. These null findings, in combination with significant predictors, underscore the complexity of spatial crime dynamics and the need to interpret associations with caution, especially when using observational data. The temporal fixed effects (year groupings) show a clear decline in crime risk over the 14-year study period. Compared to the baseline period (2010-2012), the odds of violent crime were significantly lower during 2017-2019 (OR = 0.11, p = 0.0078) and further lowered during 2020-2023 (OR = 0.05, p < 0.001), after controlling for all over preditors. These results suggest a substantial decrease in violent crime odds in recent years, which many reflect broader shifts such as policing strategies, demographic changes, or social conditions over time. The 2013-2016 period was not significantly different from the baseline.
 
-Overall, the model suggests that crime risk is heavily patterned by structural factors like income and education, and that camera presence strongly correlates with violent incidents, although this is likely due to endogeneity. The large and significant random effects variance confirms that important localized variation in crime remains unexplained, pointing to the value of spatial random effects in capturing latent neighborhood-level risk. The model would also suggest a significant decline in violent crime risk starting sometime after 2016.
+Overall, the model suggests that crime risk is heavily patterned by structural factors like income and educational attainment, and that camera presence strongly correlates with violent incidents, although this is likely due to endogeneity. The large and significant random effects variance confirms that important localized variation in crime remains unexplained, pointing to the value of spatial random effects in capturing latent neighborhood-level risk. The model would also suggest a significant decline in violent crime risk starting sometime after 2016.
 
 ### Accuracy of Model
 
-```{r accuracy, message=F, warning=F}
-###
-# accuracy evaluation
-###
-
+```{r accuracy, message=F, warning=F, cache=F}
 # get predicted probabilities
 pred_probs <- predict(model, newdata = test_data,
                       type = 'response', allow.new.levels = TRUE)
@@ -1144,7 +1175,8 @@ confusion_gt <-
   confusion_df %>%
   gt() %>%
   tab_header(title = 'Confusion Matrix: Crime Prediction Model') %>%
-  fmt_number(columns = Count, decimals = 0)
+  fmt_number(columns = Count, decimals = 0) %>%
+  as_latex()
 
 # calculate metrics
 accuracy <- (TP + TN) / sum(conf_matrix)
@@ -1163,22 +1195,23 @@ metrics_gt <-
   mutate(Value = round(Value, 4)) %>%
   gt() %>%
   tab_header(title = 'Model Performance Metrics') %>%
-  fmt_percent(columns = Value, decimals = 2)
+  fmt_percent(columns = Value, decimals = 2) %>%
+  as_latex()
 
 # show gt tables of confusion matrix and metrics
 confusion_gt
 metrics_gt
 ```
 
-The accuracy results demonstrate high performance in identifying violent crime occurrences within the dataset. The model achieved an overall accuracy of 97.58%, with a sensitivity (recall) of 99.51%, indicating that it correctly classified nearly all block group–year observations where violent crime occurred. However, the model exhibited a specificity of 0.00%, meaning it did not correctly identify any of the few observations without crime. This low specificity is largely attributable to the extreme class imbalance in the data: out of 4,060 total block group–year observations, only 83 did not report any violent crime, and in the test dataset, just 4 observations were classified as “no crime.”
+The accuracy results demonstrate high performance in identifying violent crime occurrences within the dataset. The model achieved an overall accuracy of 97.58%, with a sensitivity (recall) of 99.51%, indicating that it correctly classified nearly all block group–year observations where violent crime occurred. However, the model exhibited a specificity of 0.00%, meaning it did not correctly identify any of the few observations without crime. This low specificity is largely attributable to the extreme class imbalance in the data. Specifically, out of 4,060 total block group–year observations, only 83 did not report any violent crime, and in the test dataset, just 4 observations were classified as having no crime.
 
-This distributional imbalance skews the specificity metric and makes it less meaningful in this context. However, the aim of the study is not to build a balanced binary classifier, but to identify significant predictors of violent crime and uncover spatial patterns in unexplained risk through random effects modeling. Therefore, the model’s high sensitivity and its ability to detect where crime is likely to occur are far more relevant to the study’s objectives. The model highlights key social and spatial risk factors while providing insight into how existing surveillance infrastructure aligns with areas of elevated, unexplained violent crime risk.
+This distributional imbalance skews the specificity metric and makes it less meaningful in this context. However, the aim of the study is not to build a balanced binary classifier, but to identify significant predictors of violent crime and uncover spatial patterns in unexplained risk through random effects modeling. Therefore, the model’s high sensitivity and its ability to detect where crime is likely to occur are far more relevant to the study’s objectives. The model identifies key social and spatial risk factors while providing insight into how existing surveillance infrastructure aligns with areas of elevated, unexplained violent crime risk.
 
 ### Random Effects
 
 #### Investigating Persistent Positive Random Effects by Block Group
 
-```{r random_effects_bg, message=F, warning=F}
+```{r random_effects_bg, message=F, warning=F, cache=F}
 # make map of random effects to see which areas have a higher risk of crime
 # than expected possibly due to unmeasured factors, and which areas have lower
 # than expected crime risk
@@ -1209,7 +1242,7 @@ ranef_cams_map <-
   geom_sf(data = buff_blocks.ranef, aes(fill = random_intercept), color = NA) +
   geom_sf(data = bpd_cameras %>% 
             st_transform(crs = st_crs(buff_blocks.ranef)), 
-          color = 'black') +
+          color = 'black', size = 1) +
   scale_fill_distiller(
     palette = 'RdYlBu',
     name = 'Random Intercept\n(Log-Odds)',
@@ -1227,11 +1260,11 @@ ranef_cams_map
 
 #### Top 30 Block Groups with Most Unexplained Violent Crime Risk
 
-```{r top_30_unexplained, message=F, warning=F}
+```{r top_30_unexplained, message=F, warning=F, cache=F}
 # get top-30 block groups in terms of highest random intercept
 top_30_bgs <-
   buff_blocks.ranef %>%
-  select(GEOID, has_camera, random_intercept, geometry) %>%
+  select(GEOID, has_camera, random_intercept) %>%
   arrange(desc(random_intercept)) %>%
   head(n = 30)
 
@@ -1244,7 +1277,7 @@ top_30_bgs_map <-
   geom_sf(data = top_30_bgs, aes(fill = random_intercept)) +
   geom_sf(data = bpd_cameras %>% 
             st_transform(crs = st_crs(top_30_bgs)),
-          color = 'black') +
+          color = 'black', size = 1) +
   scale_fill_distiller(
     palette = 'RdYlGn',
     name = 'Random Intercept\n(Log-Odds)',
@@ -1252,7 +1285,7 @@ top_30_bgs_map <-
     direction = -1
   ) +
   labs(
-    title = 'Block Groups with Most Unexplained Violent Crime Risk',
+    title = 'Most Unexplained Violent Crime Risk',
     subtitle = 'Top 30 with BPD Surveillance Camera Locations'
   ) +
   theme_map()
@@ -1260,33 +1293,37 @@ top_30_bgs_map <-
 top_30_bgs_map
 ```
 
-The sequence of maps provides valuable spatial insights into block group-level variation in violent crime risk across Buffalo, New York, after adjusting for a range of predictors. The first map, titled “Random Effects by Block Group,” shows the estimated random intercepts from the mixed-effects model. These random effects capture the baseline crime risk in each block group that remains unexplained by fixed effects such as income, education, racial composition, and the presence of police cameras. Warmer colors (closer to red) indicate higher unexplained log-odds of violent crime, suggesting areas where violence is more prevalent than the included predictors would suggest. In contrast, cooler tones (blues) mark block groups with substantially lower-than-expected crime risk. The fact that these deviations persist even after controlling for known predictors underscores the presence of unmeasured local influences or structural factors.
+The sequence of maps provides valuable spatial insights into block group-level variation in violent crime risk across Buffalo, New York after adjusting for a range of predictors. The first map, titled “Random Effects by Block Group,” shows the estimated random intercepts from the mixed-effects model. These random effects capture the baseline crime risk in each block group that remains unexplained by fixed effects such as income, educational attainment, racial composition, and the presence of police cameras. Warmer colors (closer to red) indicate higher unexplained log-odds of violent crime, suggesting areas where violence is more prevalent than the included predictors would suggest. In contrast, cooler tones (blues) mark block groups with substantially lower-than-expected crime risk. The fact that these deviations persist even after controlling for known predictors underscores the presence of unmeasured local influences or structural factors.
 
-The second map, “Crime Risk by Block Group: BPD Surveillance Camera Locations,” overlays the same random effects with the locations of Buffalo Police Department surveillance cameras (shown as black dots). This comparison facilitates a visual assessment of whether surveillance cameras are systematically deployed in high-risk areas. While some high-risk block groups have a visible camera presence, there are also notable high-risk zones without nearby cameras, high-risk zones with cameras only on the periphery, and areas saturated with surveillance in relatively low-risk neighborhoods. This discrepancy suggests potential inefficiencies or misalignments in camera deployment strategy, raising questions about the criteria used for surveillance infrastructure decisions.
+The second map, “Crime Risk by Block Group: BPD Surveillance Camera Locations,” overlays the same random effects with the locations of Buffalo Police Department surveillance cameras (shown as black dots). This comparison facilitates a visual assessment of whether surveillance cameras are systematically deployed in high-risk areas. While some high-risk block groups have a visible camera presence, there are also notable high-risk areas without nearby cameras, high-risk areas with cameras only on the periphery, and areas saturated with surveillance in relatively low-risk neighborhoods. This discrepancy suggests potential inefficiencies or misalignments in camera deployment strategy, raising questions about the criteria used for surveillance infrastructure decisions.
 
-The third map, “Block Groups with Most Unexplained Violent Crime Risk,” isolates the 30 block groups with the highest positive random effects, representing the most disproportionately at-risk areas after accounting for all model covariates. These neighborhoods stand out as locations where crime is significantly elevated beyond what would be expected from measurable social, economic, or demographic variables. There are specific clusters of block groups with high unexplained risk along Genesee Street, although the east side in general shows many more of these block groups than in other areas of the city. Overlaying camera locations again highlights that several of these highest-risk block groups lack any police surveillance presence, revealing important gaps in monitoring coverage. This insight may inform future place-based interventions, resource allocations, or deeper community-level analyses to uncover latent risk factors not captured in the current model.
+The third map, “Most Unexplained Violent Crime Risk,” isolates the 30 block groups with the highest positive random effects, representing the most disproportionately at-risk areas after accounting for all model covariates. These block groups stand out as locations where crime is significantly elevated beyond what would be expected from measurable social, economic, or demographic variables. There are specific areas of the city that contain more block groups with more unexplained risk, which include the east side and areas closer to downtown. Overlaying camera locations again highlights that several of these highest-risk block groups lack any police surveillance presence or are only covered by surveillance cameras on their peripheries, revealing important gaps in monitoring coverage. This insight may inform future place-based interventions, resource allocations, or deeper community-level analyses to uncover latent risk factors not captured in the current model.
 
-Together, these maps imply that while known predictors explain much of the variation in violent crime across Buffalo, persistent pockets of unexplained high risk remain (especially on the east side). These areas merit further investigation and could represent strategic priorities for resource allocation, targeted interventions, or community engagement—especially where gaps in surveillance or prevention infrastructure are evident.
+Together, these maps imply that while known predictors explain much of the variation in violent crime across Buffalo, persistent pockets of unexplained high risk remain (especially on the east side and close to downtown). These areas merit further investigation and could represent strategic priorities for resource allocation, targeted interventions, or community engagement to address gaps in surveillance or crime prevention infrastructure.
 
 # Discussion and Conclusions
 
-This study employed a generalized linear mixed model (GLMM) to investigate the spatial and socioeconomic determinants of violent crime in Buffalo, New York, from 2010 to 2023. Drawing from a rich dataset that incorporated both fixed effects (e.g., income, education, racial composition, park proximity) and random intercepts for block groups, the model sought to explain variation in violent crime while accounting for spatial and temporal dependencies. The findings reveal complex interactions between socioeconomic factors, law enforcement infrastructure, and persistent spatial disparities in crime risk.
+This study employed a generalized linear mixed model (GLMM) to investigate the spatial and socioeconomic determinants of violent crime in Buffalo, New York, from 2010 to 2023. Drawing from a dataset that incorporated both fixed effects (e.g., income, educational attainment, racial composition, park proximity) and random intercepts for block groups, the model attempted to explain variation in violent crime while accounting for spatial and temporal dependencies. The findings reveal complex interactions between socioeconomic factors, law enforcement infrastructure, and persistent spatial disparities in crime risk.
 
-Police surveillance cameras were significantly associated with increased odds of violent crime (OR = 20.67, p < 0.01). While this might appear counterintuitive, it likely reflects increased detection and reporting rather than increased incidence, as heavily surveilled areas may experience heightened police presence and administrative attention (Gómez et al., 2021; Priks, 2015). Higher per capita income (OR = 0.51, p = 0.01) and educational attainment (OR = 0.52, p = 0.04) were associated with lower crime odds, supporting findings from prior research emphasizing the protective role of socioeconomic advantage (Lochner, 2010; Sampson et al., 1997). Conversely, spatial lags of racial composition emerged as significant (OR = 5.62, p < 0.05), underscoring the importance of spatially dependent contextual influences on crime, a finding supported by studies highlighting the utility of spatially lagged covariates in capturing neighborhood spillover effects (Anselin et al., 2000).
+Police surveillance cameras were significantly associated with increased odds of violent crime (OR = 20.67, p = 0.002). While this might appear counterintuitive, it likely reflects increased detection and reporting rather than increased incidence, as heavily surveilled areas may experience heightened police presence and administrative attention (Gómez et al., 2021; Priks, 2015). Higher per capita income (OR = 0.51, p = 0.010) and educational attainment (OR = 0.52, p = 0.035) were associated with lower crime odds, supporting findings from prior research emphasizing the protective role of socioeconomic advantage (Lochner, 2010; Sampson et al., 1997). Conversely, spatial lags of racial composition emerged as significant (OR = 5.62, p = 0.040), underscoring the importance of spatially dependent contextual influences on crime, a finding supported by studies showcasing the utility of spatially lagged covariates in capturing neighborhood spillover effects (Anselin et al., 2000).
 
-Random effects mapping revealed that areas of elevated unexplained crime risk were disproportionately concentrated in Buffalo's East Side, a region historically associated with redlining and systemic disinvestment (Partnership for the Public Good, 2018). These findings suggest that historical and structural inequalities continue to shape crime patterns, even after controlling for contemporary socioeconomic variables. This aligns with evidence that spatially clustered deprivation and past discriminatory policies can produce long-lasting effects on neighborhood safety and wellbeing (Sharkey, 2013).
+Random effects mapping revealed that areas of elevated unexplained crime risk were disproportionately concentrated in Buffalo's East Side and around downtown, a region historically associated with redlining and systemic disinvestment (Partnership for the Public Good, 2018). These findings suggest that historical and structural inequalities continue to shape crime patterns, even after controlling for contemporary socioeconomic variables. This aligns with evidence that spatially clustered deprivation and past discriminatory policies can produce long-lasting effects on neighborhood safety and wellbeing (Sharkey, 2013).
 
-Despite its strengths, the study has limitations. First, violent crime was treated as a binary outcome, which obscures distinctions between types of offenses such as homicide, assault, and robbery. Future research should disaggregate crime categories for more targeted insights. Second, although population-weighted areal interpolation through centroid assignment was sufficient for this analysis, alternative interpolation methods may yield greater accuracy, especially in areas with irregular geometries or sparse population data (Reibel & Bufalino, 2005). Third, the model did not incorporate potential predictors such as indicators of social cohesion or disorder, including 311 service request data, which other researchers have found useful in predicting crime (Kontokosta, 2018). Unfortunately, Buffalo's 311 dataset was too incomplete to include.
+Despite its strengths, the study has certain limitations that are worth mentioning. First, violent crime was treated as a binary outcome, which obscures distinctions between types of offenses such as homicide, assault, and robbery. Future research should disaggregate crime categories for more targeted insights. Second, although population-weighted areal interpolation through centroid assignment was sufficient for this analysis, alternative interpolation methods may yield greater accuracy, especially in areas with irregular geometries or sparse population data (Reibel & Bufalino, 2005). Third, the model did not incorporate potential predictors such as indicators of social cohesion or disorder, including 311 service request data, which other researchers have found useful in predicting crime (Kontokosta, 2018). Unfortunately, Buffalo's 311 dataset was too incomplete to include.
 
 Attempts to perform a difference-in-differences analysis to evaluate the causal effect of camera installation were unsuccessful due to multicollinearity and incomplete installation date data. Many cameras lacked installation dates, forcing the assumption that they were installed after 2017, which likely introduced bias and undermined model stability. Without reliable treatment timing, DiD estimates cannot robustly differentiate pre- and post-treatment effects (Angrist & Pischke, 2009). Nevertheless, difference-in-differences methods remain a powerful tool for evaluating the causal impact of interventions like surveillance camera installation, provided accurate timing and treatment group classification can be established (Gómez et al., 2021; Priks, 2015).
 
 Simulating the model multiple times (e.g., 1,000 iterations) could enhance stability and reduce the loss of block groups in cross-validation splits. This approach has been recommended to ensure better generalizability and mitigate issues related to data sparsity in multilevel models (Arel-Bundock, 2020). Despite efforts to stratify by crime and surveillance presence, the small number of block groups without crime (only 83 of 4,060 observations) presented challenges for evaluating specificity. Future studies might oversample or simulate these low-crime areas to better understand their distinguishing characteristics.
 
-The model's fixed effects provide evidence that socioeconomic conditions and surveillance presence significantly influence violent crime risk, but the random effects highlight that these predictors cannot explain all spatial variance. Many high-risk areas lack surveillance infrastructure, raising questions about equity and resource allocation in policing. Overall, this study demonstrates the value of spatially informed mixed-effects models in urban crime analysis and points toward important avenues for methodological and policy development.
+The model's fixed effects provide evidence that socioeconomic conditions and surveillance presence significantly influence violent crime risk, but the random effects show that these predictors cannot explain all spatial variance. Many high-risk areas lack surveillance infrastructure, raising questions about equity and resource allocation in policing. Overall, this study demonstrates the value of spatially informed mixed-effects models in urban crime analysis and points toward important avenues for methodological and policy development.
 
-The protective effects of income and education, identified in this study, align with extensive criminological literature. For example, neighborhoods with greater economic resources tend to experience fewer violent crimes due to lower levels of stress, greater institutional support, and enhanced social cohesion (Hipp, 2007). Similarly, higher educational attainment is associated with increased employment opportunities and reduced criminal behavior, particularly among youth (Lochner & Moretti, 2004). Policies that expand access to quality education and workforce development—especially in historically marginalized areas—could thus contribute meaningfully to violence prevention.
+The protective effects of income and education, identified in this study, align with extensive criminological literature. For example, neighborhoods with greater economic resources tend to experience fewer violent crimes due to lower levels of stress, greater institutional support, and enhanced social cohesion (Hipp, 2007). Similarly, higher educational attainment is associated with increased employment opportunities and reduced criminal behavior, particularly among youth (Lochner & Moretti, 2004). Policies that expand access to quality education and workforce development could contribute significantly to violence prevention, especially in historically marginalized areas.
 
-From a policy perspective, investing in built environment improvements may also reduce crime. Research has shown that enhancing street lighting, maintaining vacant lots, and creating more public gathering spaces can increase informal surveillance and reduce criminal activity (Branas et al., 2011; Mazerolle et al., 2014). Moreover, promoting community-led safety initiatives and encouraging civic engagement may bolster collective efficacy, which has been repeatedly linked to reductions in violence (Sampson et al., 1997). Given the spatial disparities observed in this study, particularly in Buffalo’s East Side, a multifaceted strategy that combines place-based investment, equitable policing, and targeted surveillance deployment is warranted.
+From a policy perspective, investing in built environment improvements may also reduce crime. Research has shown that enhancing street lighting, maintaining vacant lots, and creating more public gathering spaces can increase informal surveillance and reduce criminal activity (Branas et al., 2011; Mazerolle et al., 2014). Additionally, promoting community-led safety initiatives and encouraging civic engagement may bolster collective efficacy, which has been repeatedly linked to reductions in violence (Sampson et al., 1997). Given the spatial disparities observed in this study, particularly in Buffalo’s East Side and around the city's downtown district, a multifaceted strategy that combines place-based investment, equitable policing, and targeted surveillance deployment is warranted.
+
+```{=latex}
+\newpage
+```
 
 # References
 
@@ -1376,7 +1413,9 @@ From a policy perspective, investing in built environment improvements may also 
 
 42. Walker, K. & Herman, M. (2025). tidycensus: Load US Census Boundary and Attribute Data as 'tidyverse' and 'sf'-Ready Data Frames. R package version 1.7.1, <https://walker-data.com/tidycensus/>. 
 
-43. Wirdze, L. (2024). Impact of Income Inequality on Crime Rates in Urban Areas. *European Journal of Sociology*, *7*(1), 43-53. <https://doi.org/10.47672/ejs.2373>
+43. Weisburd, D. (2015). The Law of Crime Concentration and the Criminology of Place. *Criminology*, *53*(2), 133-157. <https://doi.org/10.1111/1745-9125.12070>
+
+44. Wirdze, L. (2024). Impact of Income Inequality on Crime Rates in Urban Areas. *European Journal of Sociology*, *7*(1), 43-53. <https://doi.org/10.47672/ejs.2373>
 
 ## Data Sources
 
